@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>What's to be done?</title>
+</head>
+<body>   
+    <div class="outerDiv" id="outerdiv" >
+    <div id="inputElement" class="inputDiv" >
+        <h2 style="color:rgb(243, 233, 233);" >Add Task</h2>
+        <input type="text" id="input" placeholder=" Add new task" >
+        <button onclick="Save()" class="Save" > Save </button>
+
+    </div>
+
+    <div class="container"  >
+
+        <div class="container-items" >
+            <button class="Save" onclick="viewTask()" > View task </button>
+                <div id="addedTask1"  >
+                 
+                </div>
+
+        </div>
+        <div class="container-items"  >
+            <!-- <button class="Save"  > Current task </button> -->
+                <div class="Task" >
+                    <h3 style="text-align: center; color:green;" >Current Task</h3>
+                </div>
+        </div>
+        <div class="container-items" >
+            <!-- <button class="Save" > Completed task </button> -->
+                <div class="Task" >
+                    <h3 style="text-align: center; color:green; " >Completed Task</h3>
+                </div>
+        </div>
+
+    </div>
+
+    <button onclick="" class="Delete" > Drag here to delete Task  </button>
+    
+    <script src="input.js" ></script>
+    <script src="viewtask.js" ></script>
+    <script src="dragEvent.js" ></script>
+    <script src="editTask.js" ></script>
+    <script src="localStorage.js" ></script>
+    
+    </div>
+    </body>
+</html>
