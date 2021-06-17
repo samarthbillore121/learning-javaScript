@@ -2,7 +2,7 @@ function editTask(taskElement){
 
     let editingBackDropDiv = document.createElement("div");
     let editingInputDiv = document.createElement("div");
-    let editingInputElem = document.createElement("input");
+    let editingInputElem = document.createElement("textarea");
     let buttonInput = document.createElement("button");
     let cancelButton = document.createElement("button")
 
@@ -10,10 +10,12 @@ function editTask(taskElement){
     editingBackDropDiv.setAttribute("class","backdrop");
     editingInputDiv.setAttribute("class","inputbox");
     editingInputElem.setAttribute("class","inputField");
-    editingInputElem.setAttribute("placeholder","Enter your edited task")
+    editingInputElem.setAttribute("placeholder","Enter your edited task");
     buttonInput.setAttribute("class","buttonInput");
     cancelButton.setAttribute("class","cancelButton");
 
+    // adding the previous value to the inputElement    
+    editingInputElem.value = taskElement.childNodes[1].data;
 
     //setting child div
     let outerMostDiv = document.getElementById("outerdiv");
