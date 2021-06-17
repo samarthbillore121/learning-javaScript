@@ -1,11 +1,11 @@
 
 function viewTask(){
         
-        if (savedInput.length){
+        if (initialInput.length){
             
-                viewedTask = [...savedInput];
-                editedTask = [...editedTask, ...viewedTask];
-                savedInput.splice(0,savedInput.length);
+                viewedTask = [...initialInput];
+                savedInput = [...savedInput, ...viewedTask];
+                initialInput.splice(0,initialInput.length);
         
             viewedTask.map((addedtask)=>{
            

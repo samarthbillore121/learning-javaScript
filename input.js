@@ -1,7 +1,7 @@
 
-let savedInput = [];
+let initialInput = [];
 let viewedTask = [];
-let editedTask = [];
+let savedInput = [];
 let completedTask = [];
 
 function Save(){
@@ -9,7 +9,7 @@ function Save(){
    if(document.getElementById("input").value!==""){
 
         let newTaskName = document.getElementById("input").value ;
-        savedInput.push(new task(newTaskName));
+        initialInput.push(new task(newTaskName));
         document.getElementById("input").value = null;
         alert("Saved");
 
