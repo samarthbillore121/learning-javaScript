@@ -21,6 +21,8 @@ document.addEventListener("drop", function(event) {
     //viewedTask.splice(dragged.childNodes[0].data-1,1);
   }
   else if (event.target.className == "Delete"){
+    let index = TaskIndex(dragged);
+    savedInput.splice(index,1);
     dragged.parentNode.removeChild(dragged);
   }
 }, false);

@@ -1,18 +1,28 @@
 
-let initialInput = [];
-let viewedTask = [];
+let initialInput = [];;
 let savedInput = [];
-let completedTask = [];
+
 
 function Save(){
 
    if(document.getElementById("input").value!==""){
 
+        //adding input to array
         let newTaskName = document.getElementById("input").value ;
         initialInput.push(new task(newTaskName));
-        document.getElementById("input").value = null;
-        alert("Saved");
 
+        //setting it to null
+        document.getElementById("input").value = null;
+
+        // saving it to another array
+        savedInput = [...savedInput, ...initialInput];
+       
+        // addding element
+        initialInput.map(addedtask =>{
+            elementMaker(addedtask);
+        })
+
+        initialInput.splice(0,1);
   }
 
     else alert("Enter something")

@@ -34,6 +34,31 @@
     left: 10px;
 }
 
+.reload{
+    width: 150px;
+    height: 35px;
+    border-radius: 2px;
+    color: green;
+    background-color: skyblue;
+    margin: 5px;
+    position: absolute;
+    left: 200px;
+}
+
+
+.reload2{
+    width: 150px;
+    height: 35px;
+    border-radius: 2px;
+    color: green;
+    background-color: skyblue;
+    margin: 5px;
+    position: absolute;
+    left: 400px
+}
+
+
+
 .inputDiv{
     text-align: center;
 }
