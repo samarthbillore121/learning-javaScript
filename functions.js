@@ -106,7 +106,7 @@ function TaskIndex(taskElement){
         if(obj.taskName===taskElement.childNodes[1].data){
             return obj;
         }});
-        
+
        let index = savedInput.indexOf(obj);
         return (index);
 }

@@ -3,12 +3,12 @@ let dragged;
 /* events fired on the draggable target */
 document.addEventListener("drag", function(event) {
     dragged = event.target;
-}, false);
+}, true);
 
 document.addEventListener("dragover", function(event) {
   // prevent default to allow drop
   event.preventDefault();
-}, false);
+}, true);
 
 document.addEventListener("drop", function(event) {
   // prevent default action (open as link for some elements)
@@ -16,8 +16,10 @@ document.addEventListener("drop", function(event) {
   // move dragged elem to the selected drop target
   if (event.target.className == "Task") {
   //  event.target.style.background = "";
+    let label = document.getElementById("label");
     dragged.parentNode.removeChild(dragged);
     event.target.appendChild(dragged);
+    event.target.removeChild(label);
     //viewedTask.splice(dragged.childNodes[0].data-1,1);
   }
   else if (event.target.className == "Delete"){
@@ -25,4 +27,4 @@ document.addEventListener("drop", function(event) {
     savedInput.splice(index,1);
     dragged.parentNode.removeChild(dragged);
   }
-}, false);
+}, true);

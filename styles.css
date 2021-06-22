@@ -114,14 +114,6 @@
     display: none;
 }
 
-
-
-/* .fa{
-    position:absolute;
-    right: 45px;
-    cursor: pointer;
-} */
-
 .Task{
     border-radius: 9px;
     height:100%;
@@ -174,4 +166,11 @@
     background-color: skyblue;
     margin: 5px;
     left: 20px ;
+}
+
+label{   
+    position: relative;
+    top: 25%;
+    left: 40%;
+    color:rgba(0, 0, 0, 0.295)
 }
