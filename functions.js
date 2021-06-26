@@ -128,17 +128,15 @@ function displayArray(arr){
     })
 }
 
-const btrfn = debounce(searchedList, 300);
+const btrfn = debounce(searchedList, 500);
 
 function debounce(fn, d){
-    console.log("inside debounce")
     let timer;
     return ()=>{
         let context = this;
         let args = arguments;
         clearTimeout(timer);
         timer = setTimeout(()=>{
-            console.log("inside setTimeout")
             fn.apply(context,args);
         }, d)
     }
