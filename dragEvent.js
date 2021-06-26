@@ -24,6 +24,7 @@ document.addEventListener("drop", function(event) {
   }
   else if (event.target.className == "Delete"){
     let index = TaskIndex(dragged);
+    console.log(index);
     savedInput.splice(index,1);
     dragged.parentNode.removeChild(dragged);
   }
