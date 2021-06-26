@@ -1,12 +1,15 @@
 
 let initialInput = [];;
 let savedInput = [];
+let displayedArray = [];
+let searchValue;
 
 
 function Save(){
 
    if(document.getElementById("input").value!==""){
 
+     
         //adding input to array
         let newTaskName = document.getElementById("input").value ;
         initialInput.push(new task(newTaskName));

@@ -10,19 +10,23 @@
 </head>
 <body>   
     <div class="outerDiv" id="outerdiv" >
-    <div id="inputElement" class="inputDiv" >
-        <h2 style="color:rgb(243, 233, 233);" >Add Task</h2>
+        <h2 style="color:rgb(243, 233, 233); text-align: center; " >Notes</h2>
+        <div id="inputElement" class="inputDiv" >
+        <div class="navbar" >
+        <input type="text" id="search" placeholder="Search Here" oninput="btrfn()" >
+        </div>
+        <div class="navbar" >    
         <input type="text" id="input" placeholder=" Add new task" >
         <button onclick="Save()" class="Save" > Save </button>
-
+        </div> 
+     
     </div>
-
-    <div class="container"  >
+    <div class="container" >
 
         <div class="container-items" >
-            <button class="Save" onclick="viewTask()" > View task </button>
                 <div id="addedTask1"  > 
-                 
+                    <h3 style="text-align: center; color:green; " >Task Here</h3>
+                   
                 </div>
 
         </div>
@@ -41,15 +45,17 @@
 
     </div>
 
-    <button onclick="" class="Delete" >Drag here to delete Task</button>
-   
+    <button onclick="" class="commonButton" >Drag Here To Delete</button>
+    <button id="viewButton"  onclick="viewTask()" > View Saved task </button>
  
     
     <script src="input.js" ></script>
     <script src="viewtask.js" ></script>
     <script src="dragEvent.js" ></script>
-    <script src="beforeReload.js" ></script>
+    <script src="reload.js" ></script>
+    <script src="search.js"></script>
     <script src="functions.js"></script>
+
     </div>
     </body>
 </html>

@@ -89,24 +89,57 @@ function afterReload(savedInputt){
         savedInputt = JSON.parse(sessionStorage.getItem("store"));
  
         //mapping it again
-        savedInputt.map((addedtask)=>{           
-            elementMaker(addedtask);
-        })
-
+        displayArray(savedInputt);
         return savedInputt;
 
     }
 
-    else return savedInputt;
+    else {
+        document.getElementById("addedTask1").textContent = '';
+        displayArray(savedInputt);
+        return savedInputt;
+    }
 }
 
 
 function TaskIndex(taskElement){
-    let obj = savedInput.filter((obj,i)=>{
-        if(obj.taskName===taskElement.childNodes[1].data){
-            return obj;
-        }});
-
-       let index = savedInput.indexOf(obj);
+    let obj = savedInput.filter(obj=>{
+        return obj.taskName===taskElement.childNodes[1].data;
+    });
+    
+       let index = savedInput.indexOf(obj[0]);
+       console.log(index);
         return (index);
+}
+
+function search(searchValue){
+        let searchedValueObjs =  savedInput.filter(addedtask =>{
+            return addedtask.taskName.startsWith(searchValue);          
+            })
+
+
+        return searchedValueObjs;
+    
+}
+
+function displayArray(arr){
+    arr.map(element=>{
+        elementMaker(element);
+    })
+}
+
+const btrfn = debounce(searchedList, 300);
+
+function debounce(fn, d){
+    console.log("inside debounce")
+    let timer;
+    return ()=>{
+        let context = this;
+        let args = arguments;
+        clearTimeout(timer);
+        timer = setTimeout(()=>{
+            console.log("inside setTimeout")
+            fn.apply(context,args);
+        }, d)
+    }
 }
