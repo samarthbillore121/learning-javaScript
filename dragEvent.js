@@ -20,11 +20,14 @@ document.addEventListener("drop", function(event) {
     dragged.parentNode.removeChild(dragged);
     event.target.appendChild(dragged);
     event.target.removeChild(label);
+    let index = TaskIndex(dragged);
+    currentTaskArray.push(savedInput[index]);
+    savedInput.splice(index,1);
+    
     //viewedTask.splice(dragged.childNodes[0].data-1,1);
   }
   else if (event.target.className == "Delete"){
     let index = TaskIndex(dragged);
-    console.log(index);
     savedInput.splice(index,1);
     dragged.parentNode.removeChild(dragged);
   }

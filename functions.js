@@ -86,8 +86,11 @@ function afterReload(savedInputt){
     if (savedInputt.length===0){
        
         //storing it again
-        savedInputt = JSON.parse(sessionStorage.getItem("store"));
+        savedInputt = JSON.parse(sessionStorage.getItem("storeTask"));
+       if(currentTaskArray.length===0) currentTaskArray = JSON.parse(sessionStorage.getItem("storecurrentTask"));
  
+        savedInputt = [...savedInputt, ...currentTaskArray];
+
         //mapping it again
         displayArray(savedInputt);
         return savedInputt;

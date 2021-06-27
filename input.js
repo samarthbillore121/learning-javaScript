@@ -2,7 +2,7 @@
 let initialInput = [];;
 let savedInput = [];
 let displayedArray = [];
-let searchValue;
+let currentTaskArray = [];
 
 
 function Save(){
