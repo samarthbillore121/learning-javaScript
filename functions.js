@@ -59,12 +59,15 @@ function editingElementMaker(taskElement){
     cancelButton.innerHTML = "Cancel";
 
     let index = TaskIndex(taskElement);
+    
 
         // giving task to the editedTask
         buttonInput.onclick = function(){
             
+            
             let newObj = new task(editingInputElem.value);
-            savedInput.splice(index,1,newObj);
+            if(index===-1) currentTaskArray.splice(index,1,newObj)
+            else savedInput.splice(index,1,newObj);
 
             taskElement.childNodes[1].data= `${editingInputElem.value}` ;
             outerMostDiv.removeChild(editingBackDropDiv);
@@ -87,9 +90,18 @@ function afterReload(savedInputt){
        
         //storing it again
         savedInputt = JSON.parse(sessionStorage.getItem("storeTask"));
-       if(currentTaskArray.length===0) currentTaskArray = JSON.parse(sessionStorage.getItem("storecurrentTask"));
- 
-        savedInputt = [...savedInputt, ...currentTaskArray];
+        
+       if(currentTaskArray.length===0 && JSON.parse(sessionStorage.getItem("storecurrentTask")) )
+       {
+
+       currentTaskArray = JSON.parse(sessionStorage.getItem("storecurrentTask"));
+       savedInputt = [...savedInputt, ...currentTaskArray];
+
+       currentTaskArray = [];
+       sessionStorage.setItem("storecurrentTask",JSON.stringify(currentTaskArray));
+
+       }
+        
 
         //mapping it again
         displayArray(savedInputt);
@@ -111,7 +123,6 @@ function TaskIndex(taskElement){
     });
     
        let index = savedInput.indexOf(obj[0]);
-       console.log(index);
         return (index);
 }
 

@@ -3,6 +3,7 @@ let initialInput = [];;
 let savedInput = [];
 let displayedArray = [];
 let currentTaskArray = [];
+let completedTaskArray = [];
 
 
 function Save(){
