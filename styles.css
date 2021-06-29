@@ -124,7 +124,7 @@
 
 .Task{
     border-radius: 9px;
-    height:100%;
+    height: auto;
     padding-bottom:50%;
 }
 
