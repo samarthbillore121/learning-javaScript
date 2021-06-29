@@ -32,7 +32,8 @@ document.addEventListener("drop", function(event) {
   }
   else if (event.target.className == "Delete"){
     let index = TaskIndex(dragged);
-    savedInput.splice(index,1);
+    if(index===-1) currentTaskArray.splice(index,1);
+    else savedInput.splice(index,1);
     dragged.parentNode.removeChild(dragged);
   }
 }, true);
