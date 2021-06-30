@@ -1,5 +1,5 @@
 .outerDiv{
-    background-color: rgba(14, 13, 13, 0.747);
+    background-color: rgba(129, 131, 150, 0.253);
     position:absolute;
     top:0;
     left:0;
@@ -12,13 +12,15 @@
     border-radius: 5px;
     border-width: 3px;
     margin-left: 30px;
+    position: relative;
 }
 
 #search{
-    width: 420px;
+    width: 400px;
     border-radius: 5px;
     border-width: 3px;
-    margin-left: 15px;
+    margin-left: 25px;
+    position: relative;
 }
 
 .navbar{
@@ -28,9 +30,49 @@
 }
 
 .inputDiv{
-   display: flex;
-   justify-content:left;
-   align-items: flex-start;
+    display: flex;
+    justify-content:left;
+    align-items: flex-start;
+ }
+
+@media (max-width: 930px){
+    #search{
+        width: 280px;
+    }
+    #input{
+        width: 160px;
+    }
+}
+
+@media (max-width: 630px){
+    #search{
+        width: 180px;
+    }
+    #input{
+        width: 100px;
+    }
+}
+
+@media (max-width: 460px){
+
+    #search{
+        width: 300px;
+    }
+    #input{
+        width: 200px;
+    }
+    
+
+    .inputDiv{
+        display: flex;
+        justify-content:space-evenly;
+        flex-direction: column;
+        height: 80px;
+     }
+}
+
+#dateTime{
+    margin-left: 5px;
 }
 
 .Save{
@@ -53,25 +95,23 @@
 
 
 #viewButton{
-    width: 150px;
+    width: auto;
     height: 35px;
     border-radius: 2px;
     color: green;
     background-color: skyblue;
     margin: 5px;
-    position: relative;
-    left: 15%;
+    
 }
 
 .Delete{
-    width: 150px;
+    width: auto;
     height: 35px;
     border-radius: 2px;
     color: green;
     background-color: skyblue;
     margin: 5px;
-    position: absolute;
-    left: 10px;
+   
 }
 
 
@@ -80,7 +120,7 @@
     width: 450px;
     height: 400px;
     border-radius: 5px;
-    background-color: rgb(243, 233, 233);
+    background-color: rgba(39, 36, 33, 0.527);
     position: relative;
     margin: 15px;
     overflow-y: scroll;
@@ -181,4 +221,9 @@ label{
     top: 25%;
     left: 40%;
     color:rgba(0, 0, 0, 0.541);
+}
+
+.container-btn{
+    display: flex;
+    justify-content: space-around;
 }

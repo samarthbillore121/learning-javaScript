@@ -23,10 +23,10 @@ document.addEventListener("drop", function(event) {
     
     let index = TaskIndex(dragged);
     
+    if(index!==-1){
     currentTaskArray.push(savedInput[index]);
-    
-
     savedInput.splice(index,1);
+    }
     
     //viewedTask.splice(dragged.childNodes[0].data-1,1);
   }

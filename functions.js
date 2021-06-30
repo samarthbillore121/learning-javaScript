@@ -21,7 +21,13 @@ function elementMaker(addedtask){
 
         // setting text (adding task text)          
         let taskNamee = document.createTextNode(`${addedtask.taskName}`);          
-        taskElement.appendChild(taskNamee);            
+        taskElement.appendChild(taskNamee);
+
+        // let br = document.createElement("br");
+        // taskElement.appendChild(br);
+        
+        // let dateTime = document.createTextNode(`${addedtask.dateTime}`);          
+        // taskElement.appendChild(dateTime);
         
         let parentDiv = document.getElementById("addedTask1");
         parentDiv.appendChild(taskElement);
@@ -128,7 +134,9 @@ function TaskIndex(taskElement){
 
 function search(searchValue){
         let searchedValueObjs =  savedInput.filter(addedtask =>{
-            return addedtask.taskName.startsWith(searchValue);          
+            let lowerCaseTask;
+            if(typeof(addedtask.taskName)==="string") lowerCaseTask  = addedtask.taskName.toLowerCase()
+            return lowerCaseTask.startsWith(searchValue);          
             })
 
 
