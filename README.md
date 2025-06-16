@@ -8,3 +8,9 @@ This emphasis on learning few of the important concepts of JavaScripts :
 
 This uses, basic HTML, Css and JavaScript to design a Small Application of TO-DO list components which are useful for our day-to-day tasks. 
 
+LLD : 
+
+1. index.html file : HTML file, which defines the UI of the whole application.
+2. styles.css file : Defines all the css in one big file. ( Not very good for scaling, but get the job done for small projects )
+3. Modular code is mostly JS. Names are self explanatory.
+
